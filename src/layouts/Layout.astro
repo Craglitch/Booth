@@ -23,13 +23,13 @@ const { title = "IT Career Expo" } = Astro.props;
     
     <title>{title}</title>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <Navigation />
-    <main class="min-h-screen">
+    <main class="flex-1">
       <slot />
     </main>
     <footer class="bg-gray-900 text-white py-8 mt-16">
-      <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-gray-400 text-sm">
           © 2026 IT Career Expo. Terokai Masa Depan Digital.
         </p>

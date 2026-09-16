@@ -2,104 +2,56 @@
 import Layout from "../layouts/Layout.astro";
 
 const careers = [
-  {
-    icon: "💻",
-    title: "Web Developer",
-    description: "Bina laman web dan aplikasi web menggunakan HTML, CSS, JavaScript dan framework moden.",
-    salary: "RM 3,500 - RM 8,000",
-    skills: ["HTML/CSS", "JavaScript", "React", "Node.js"],
-  },
-  {
-    icon: "📱",
-    title: "Mobile Developer",
-    description: "Cipta aplikasi mudah alih untuk Android dan iOS menggunakan Flutter, React Native atau native.",
-    salary: "RM 4,000 - RM 9,000",
-    skills: ["Flutter", "React Native", "Kotlin", "Swift"],
-  },
-  {
-    icon: "🔐",
-    title: "Cyber Security",
-    description: "Lindungi sistem dan data organisasi daripada ancaman siber dan serangan hacker.",
-    salary: "RM 4,500 - RM 12,000",
-    skills: ["Networking", "Ethical Hacking", "Linux", "Cryptography"],
-  },
-  {
-    icon: "📊",
-    title: "Data Analyst",
-    description: "Analisis data untuk membantu organisasi membuat keputusan yang lebih baik.",
-    salary: "RM 4,000 - RM 10,000",
-    skills: ["SQL", "Python", "Excel", "Power BI"],
-  },
-  {
-    icon: "🎨",
-    title: "UI/UX Designer",
-    description: "Reka bentuk antara muka dan pengalaman pengguna yang menarik dan mudah digunakan.",
-    salary: "RM 3,500 - RM 8,000",
-    skills: ["Figma", "Adobe XD", "Prototyping", "User Research"],
-  },
-  {
-    icon: "☁️",
-    title: "Cloud Engineer",
-    description: "Urus dan selenggara infrastruktur cloud seperti AWS, Azure dan Google Cloud.",
-    salary: "RM 5,000 - RM 15,000",
-    skills: ["AWS", "Azure", "Docker", "Kubernetes"],
-  },
-  {
-    icon: "🤖",
-    title: "AI/ML Engineer",
-    description: "Bina model kecerdasan buatan dan pembelajaran mesin untuk pelbagai aplikasi.",
-    salary: "RM 6,000 - RM 18,000",
-    skills: ["Python", "TensorFlow", "PyTorch", "Statistics"],
-  },
-  {
-    icon: "🎮",
-    title: "Game Developer",
-    description: "Cipta permainan video untuk platform PC, konsol dan mudah alih.",
-    salary: "RM 3,500 - RM 10,000",
-    skills: ["Unity", "Unreal Engine", "C#", "C++"],
-  },
+  { icon: "💻", title: "Web Developer", description: "Bina laman web dan aplikasi web menggunakan HTML, CSS, JavaScript dan framework moden.", salary: "RM 3,500 - RM 8,000", skills: ["HTML/CSS", "JavaScript", "React", "Node.js"] },
+  { icon: "📱", title: "Mobile Developer", description: "Cipta aplikasi mudah alih untuk Android dan iOS.", salary: "RM 4,000 - RM 9,000", skills: ["Flutter", "React Native", "Kotlin", "Swift"] },
+  { icon: "🔐", title: "Cyber Security", description: "Lindungi sistem dan data organisasi daripada ancaman siber.", salary: "RM 4,500 - RM 12,000", skills: ["Networking", "Ethical Hacking", "Linux"] },
+  { icon: "📊", title: "Data Analyst", description: "Analisis data untuk membantu organisasi membuat keputusan.", salary: "RM 4,000 - RM 10,000", skills: ["SQL", "Python", "Excel", "Power BI"] },
+  { icon: "🎨", title: "UI/UX Designer", description: "Reka bentuk antara muka dan pengalaman pengguna yang menarik.", salary: "RM 3,500 - RM 8,000", skills: ["Figma", "Adobe XD", "Prototyping"] },
+  { icon: "☁️", title: "Cloud Engineer", description: "Urus dan selenggara infrastruktur cloud.", salary: "RM 5,000 - RM 15,000", skills: ["AWS", "Azure", "Docker", "Kubernetes"] },
+  { icon: "🤖", title: "AI/ML Engineer", description: "Bina model kecerdasan buatan dan pembelajaran mesin.", salary: "RM 6,000 - RM 18,000", skills: ["Python", "TensorFlow", "PyTorch"] },
+  { icon: "🎮", title: "Game Developer", description: "Cipta permainan video untuk pelbagai platform.", salary: "RM 3,500 - RM 10,000", skills: ["Unity", "Unreal Engine", "C#", "C++"] },
 ];
 ---
 
 <Layout title="Kerjaya IT - IT Career Expo">
-  <section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
+  <section class="py-10 md:py-20 bg-gradient-to-br from-gray-50 to-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-12">
-        <div class="inline-block bg-green-100 px-4 py-2 rounded-full mb-4">
-          <span class="text-green-700 text-sm font-medium">💼 LALUAN KERJAYA</span>
+      <div class="text-center mb-8 md:mb-12">
+        <div class="inline-block bg-green-100 px-3 md:px-4 py-1.5 md:py-2 rounded-full mb-3 md:mb-4">
+          <span class="text-green-700 text-xs md:text-sm font-medium">💼 LALUAN KERJAYA</span>
         </div>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+        <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900">
           Pilih Laluan <span class="text-green-600">Kerjaya IT</span> Anda
         </h1>
-        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Terdapat pelbagai bidang dalam IT yang boleh anda ceburi. Setiap satu menawarkan peluang dan cabaran yang berbeza.
+        <p class="text-gray-600 mt-3 md:mt-4 max-w-2xl mx-auto text-sm md:text-base">
+          Terdapat pelbagai bidang dalam IT yang boleh anda ceburi.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {careers.map((career) => (
-          <div class="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-green-300 hover:-translate-y-2">
+          <div class="group bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-green-300 hover:-translate-y-2">
             
-            <div class="flex items-start gap-4 mb-4">
-              <div class="text-4xl">{career.icon}</div>
+            <div class="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+              <div class="text-3xl md:text-4xl">{career.icon}</div>
               <div>
-                <h3 class="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+                <h3 class="text-lg md:text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
                   {career.title}
                 </h3>
-                <div class="text-sm text-green-600 font-semibold mt-1">
+                <div class="text-xs md:text-sm text-green-600 font-semibold mt-1">
                   {career.salary}
                 </div>
               </div>
             </div>
 
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            <p class="text-gray-600 text-xs md:text-sm leading-relaxed mb-3 md:mb-4">
               {career.description}
             </p>
 
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-1.5 md:gap-2">
               {career.skills.map((skill) => (
-                <span class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded-full border border-green-100">
+                <span class="text-[10px] md:text-xs bg-green-50 text-green-700 px-2 py-0.5 md:py-1 rounded-full border border-green-100">
                   {skill}
                 </span>
               ))}
