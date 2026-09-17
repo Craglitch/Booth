@@ -2,21 +2,78 @@
 import Layout from "../layouts/Layout.astro";
 
 const careers = [
-  { icon: "💻", title: "Web Developer", description: "Bina laman web dan aplikasi web menggunakan HTML, CSS, JavaScript dan framework moden.", salary: "RM 3,500 - RM 8,000", skills: ["HTML/CSS", "JavaScript", "React", "Node.js"] },
-  { icon: "📱", title: "Mobile Developer", description: "Cipta aplikasi mudah alih untuk Android dan iOS.", salary: "RM 4,000 - RM 9,000", skills: ["Flutter", "React Native", "Kotlin", "Swift"] },
-  { icon: "🔐", title: "Cyber Security", description: "Lindungi sistem dan data organisasi daripada ancaman siber.", salary: "RM 4,500 - RM 12,000", skills: ["Networking", "Ethical Hacking", "Linux"] },
-  { icon: "📊", title: "Data Analyst", description: "Analisis data untuk membantu organisasi membuat keputusan.", salary: "RM 4,000 - RM 10,000", skills: ["SQL", "Python", "Excel", "Power BI"] },
-  { icon: "🎨", title: "UI/UX Designer", description: "Reka bentuk antara muka dan pengalaman pengguna yang menarik.", salary: "RM 3,500 - RM 8,000", skills: ["Figma", "Adobe XD", "Prototyping"] },
-  { icon: "☁️", title: "Cloud Engineer", description: "Urus dan selenggara infrastruktur cloud.", salary: "RM 5,000 - RM 15,000", skills: ["AWS", "Azure", "Docker", "Kubernetes"] },
-  { icon: "🤖", title: "AI/ML Engineer", description: "Bina model kecerdasan buatan dan pembelajaran mesin.", salary: "RM 6,000 - RM 18,000", skills: ["Python", "TensorFlow", "PyTorch"] },
-  { icon: "🎮", title: "Game Developer", description: "Cipta permainan video untuk pelbagai platform.", salary: "RM 3,500 - RM 10,000", skills: ["Unity", "Unreal Engine", "C#", "C++"] },
+  {
+    icon: "💻",
+    title: "Web Developer",
+    description: "Bina laman web dan aplikasi web menggunakan HTML, CSS, JavaScript dan framework moden.",
+    salary: "RM 3,500 - RM 8,000",
+    skills: ["HTML/CSS", "JavaScript", "React", "Node.js"],
+    pathways: ["SPM → Diploma CS", "STPM → Degree CS"],
+  },
+  {
+    icon: "📱",
+    title: "Mobile Developer",
+    description: "Cipta aplikasi mudah alih untuk Android dan iOS.",
+    salary: "RM 4,000 - RM 9,000",
+    skills: ["Flutter", "React Native", "Kotlin", "Swift"],
+    pathways: ["SPM → Diploma IT", "STPM → Degree SE"],
+  },
+  {
+    icon: "🔐",
+    title: "Cyber Security",
+    description: "Lindungi sistem dan data organisasi daripada ancaman siber.",
+    salary: "RM 4,500 - RM 12,000",
+    skills: ["Networking", "Ethical Hacking", "Linux"],
+    pathways: ["SPM → Diploma Cyber Sec", "STPM → Degree Cyber Sec"],
+  },
+  {
+    icon: "📊",
+    title: "Data Analyst",
+    description: "Analisis data untuk membantu organisasi membuat keputusan.",
+    salary: "RM 4,000 - RM 10,000",
+    skills: ["SQL", "Python", "Excel", "Power BI"],
+    pathways: ["SPM → Diploma Statistik", "STPM → Degree Data Science"],
+  },
+  {
+    icon: "🎨",
+    title: "UI/UX Designer",
+    description: "Reka bentuk antara muka dan pengalaman pengguna yang menarik.",
+    salary: "RM 3,500 - RM 8,000",
+    skills: ["Figma", "Adobe XD", "Prototyping"],
+    pathways: ["SPM → Diploma Multimedia", "STPM → Degree Design"],
+  },
+  {
+    icon: "☁️",
+    title: "Cloud Engineer",
+    description: "Urus dan selenggara infrastruktur cloud.",
+    salary: "RM 5,000 - RM 15,000",
+    skills: ["AWS", "Azure", "Docker", "Kubernetes"],
+    pathways: ["SPM → Diploma IT", "STPM → Degree CS/IT"],
+  },
+  {
+    icon: "🤖",
+    title: "AI/ML Engineer",
+    description: "Bina model kecerdasan buatan dan pembelajaran mesin.",
+    salary: "RM 6,000 - RM 18,000",
+    skills: ["Python", "TensorFlow", "PyTorch"],
+    pathways: ["STPM → Degree AI/CS", "SPM perlu ambil STPM/Foundation"],
+  },
+  {
+    icon: "🎮",
+    title: "Game Developer",
+    description: "Cipta permainan video untuk pelbagai platform.",
+    salary: "RM 3,500 - RM 10,000",
+    skills: ["Unity", "Unreal Engine", "C#", "C++"],
+    pathways: ["SPM → Diploma Game Dev", "STPM → Degree CS"],
+  },
 ];
 ---
 
 <Layout title="Kerjaya IT - IT Career Expo">
   <section class="py-10 md:py-20 bg-gradient-to-br from-gray-50 to-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
+      <!-- Header -->
       <div class="text-center mb-8 md:mb-12">
         <div class="inline-block bg-green-100 px-3 md:px-4 py-1.5 md:py-2 rounded-full mb-3 md:mb-4">
           <span class="text-green-700 text-xs md:text-sm font-medium">💼 LALUAN KERJAYA</span>
@@ -29,10 +86,11 @@ const careers = [
         </p>
       </div>
 
+      <!-- Careers Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {careers.map((career) => (
           <div class="group bg-white rounded-2xl p-5 md:p-6 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-green-300 hover:-translate-y-2">
-            
+
             <div class="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
               <div class="text-3xl md:text-4xl">{career.icon}</div>
               <div>
@@ -49,6 +107,16 @@ const careers = [
               {career.description}
             </p>
 
+            <!-- Pathway badges -->
+            <div class="flex flex-wrap gap-1.5 mb-3">
+              {career.pathways.map((path) => (
+                <span class="text-[10px] md:text-xs bg-blue-50 text-blue-700 px-2 py-0.5 rounded-md border border-blue-100 font-medium">
+                  🎓 {path}
+                </span>
+              ))}
+            </div>
+
+            <!-- Skill tags -->
             <div class="flex flex-wrap gap-1.5 md:gap-2">
               {career.skills.map((skill) => (
                 <span class="text-[10px] md:text-xs bg-green-50 text-green-700 px-2 py-0.5 md:py-1 rounded-full border border-green-100">
@@ -59,6 +127,134 @@ const careers = [
 
           </div>
         ))}
+      </div>
+
+      <!-- SPM vs STPM Section -->
+      <div class="mt-16 md:mt-24">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-4xl font-bold text-gray-900">
+            Laluan <span class="text-green-600">SPM</span> vs <span class="text-blue-600">STPM</span>
+          </h2>
+          <p class="text-gray-600 mt-2 text-sm md:text-base">
+            Dua laluan utama untuk menceburi bidang IT di Malaysia.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- SPM Pathway -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-2 border-green-100 hover:border-green-300 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-2xl">📗</div>
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900">Laluan SPM</h3>
+                <p class="text-xs md:text-sm text-green-600 font-medium">Lebih cepat, lebih praktikal</p>
+              </div>
+            </div>
+
+            <ol class="space-y-3 text-sm text-gray-700">
+              <li class="flex gap-3">
+                <span class="font-bold text-green-600">1.</span>
+                <span><strong>SPM</strong> — Min 5 kredit termasuk BM, Matematik, Sains/IT</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="font-bold text-green-600">2.</span>
+                <span><strong>Diploma</strong> (2-3 tahun) di Politeknik / Kolej Komuniti / IPTS — contoh: Diploma Sains Komputer, Diploma IT</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="font-bold text-green-600">3.</span>
+                <span><strong>Pilihan A:</strong> Terus bekerja sebagai Junior Developer / IT Support</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="font-bold text-green-600">4.</span>
+                <span><strong>Pilihan B:</strong> Sambung Degree (credit transfer) di IPTA/IPTS</span>
+              </li>
+            </ol>
+
+            <div class="mt-5 p-3 bg-green-50 rounded-lg border border-green-100">
+              <p class="text-xs text-green-800">
+                <strong>💡 Sesuai untuk:</strong> Pelajar yang mahu cepat masuk industri, suka pembelajaran praktikal.
+              </p>
+            </div>
+          </div>
+
+          <!-- STPM Pathway -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-2 border-blue-100 hover:border-blue-300 transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">📘</div>
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900">Laluan STPM</h3>
+                <p class="text-xs md:text-sm text-blue-600 font-medium">Lebih akademik, lebih luas</p>
+              </div>
+            </div>
+
+            <ol class="space-y-3 text-sm text-gray-700">
+              <li class="flex gap-3">
+                <span class="font-bold text-blue-600">1.</span>
+                <span><strong>SPM</strong> — Min 5 kredit</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="font-bold text-blue-600">2.</span>
+                <span><strong>STPM</strong> (1.5 tahun) — Ambil Matematik, Pengkomputeran, Fizik/Ekonomi</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="font-bold text-blue-600">3.</span>
+                <span><strong>Degree</strong> (3-4 tahun) di IPTA (UM, USM, UTM, UKM) — contoh: Bachelor CS, Software Engineering, Data Science</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="font-bold text-blue-600">4.</span>
+                <span>Bekerja sebagai Software Engineer / Data Scientist / AI Engineer</span>
+              </li>
+            </ol>
+
+            <div class="mt-5 p-3 bg-blue-50 rounded-lg border border-blue-100">
+              <p class="text-xs text-blue-800">
+                <strong>💡 Sesuai untuk:</strong> Pelajar yang mahu masuk IPTA, minat teori & penyelidikan, sasaran jawatan senior.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="mt-8 overflow-x-auto">
+          <table class="w-full text-sm bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+            <thead class="bg-gray-50 text-gray-700">
+              <tr>
+                <th class="px-4 py-3 text-left font-semibold">Kriteria</th>
+                <th class="px-4 py-3 text-left font-semibold text-green-700">SPM → Diploma</th>
+                <th class="px-4 py-3 text-left font-semibold text-blue-700">SPM → STPM → Degree</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 text-gray-600">
+              <tr>
+                <td class="px-4 py-3 font-medium">Tempoh</td>
+                <td class="px-4 py-3">2-3 tahun (Diploma)</td>
+                <td class="px-4 py-3">5-5.5 tahun (STPM + Degree)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Kos</td>
+                <td class="px-4 py-3">Lebih rendah (Politeknik)</td>
+                <td class="px-4 py-3">Sederhana (IPTA) / Tinggi (IPTS)</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Gaji permulaan</td>
+                <td class="px-4 py-3">RM 2,500 - RM 3,500</td>
+                <td class="px-4 py-3">RM 3,500 - RM 5,000</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Sasaran jawatan</td>
+                <td class="px-4 py-3">Junior Dev, IT Support, Technician</td>
+                <td class="px-4 py-3">Software Engineer, Data Scientist, AI Engineer</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-medium">Boleh sambung?</td>
+                <td class="px-4 py-3">✅ Ya, credit transfer ke Degree</td>
+                <td class="px-4 py-3">✅ Ya, terus ke Master/PhD</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
     </div>
